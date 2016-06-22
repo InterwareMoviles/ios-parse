@@ -1,4 +1,21 @@
 # Estándares de programación en iOS
+
+## Índice
+
+- [Arquitectura de código](#arquitectura-de-código)
+- [Estándares de codificación](#estándares-de-codificación)
+- [Convención de nombres](#convención-de-nombres)
+- [UI](#ui)
+- [Manejo de dependencias](#manejo-de-dependencias)
+- [Librerías](#librerías)
+- [Patrones de comunicación](#patrones-de-comunicación)
+- [Convención de nombres](#convención-de-nombres)
+- [Constantes](#constantes)
+- [Assets](#assets)
+- [Let en lugar de Var](#let-en-lugar-de-var)
+- [Sintaxis](#sintaxis)
+- [Paréntesis](#paréntesis)
+
 Arquitectura de código
 --------------------
 La estructura de directorios sigue la siguiente forma:
@@ -133,7 +150,7 @@ Mala idea:
 <br>Para el manejo de interfaces en iOS, se utilizará una combinación de Storyboards y vistas completamente programáticas. La estructura inicial se realizará en storyboards y para vistas reusables o complejas se codificarán las vistas.
 Se utilizará Autolayout para el acomodo de los elementos.
 
-## Manejo de dependencias ## 
+## Manejo de dependencias
 <br>Se utilizará cocoapods como manejador de dependencias
 
 ## Librerías
