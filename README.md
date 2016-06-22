@@ -130,11 +130,11 @@ Mala idea:
  - Marcar clase como final cuando no se planea heredar de ella.
 
 **UI**
-Para el manejo de interfaces en iOS, se utilizará una combinación de Storyboards y vistas completamente programáticas. La estructura inicial se realizará en storyboards y para vistas reusables o complejas se codificarán las vistas.
+<br>Para el manejo de interfaces en iOS, se utilizará una combinación de Storyboards y vistas completamente programáticas. La estructura inicial se realizará en storyboards y para vistas reusables o complejas se codificarán las vistas.
 Se utilizará Autolayout para el acomodo de los elementos.
 
 **Manejo de dependencias**
-Se utilizará cocoapods como manejador de dependencias
+<br>Se utilizará cocoapods como manejador de dependencias
 
 **Librerías**
 
@@ -143,7 +143,7 @@ Se utilizará cocoapods como manejador de dependencias
  - SwiftyJSON para parsear y manejar json en swift.
 
 **Patrones de comunicación**
-En iOS existen varias maneras de notificar a otros componentes:
+<br>En iOS existen varias maneras de notificar a otros componentes:
 
  - Delegados: Se utiliza para comunicar información hacia atrás,   
    normalmente de vistas a controladores. Sirve para comunicación uno a 
@@ -159,7 +159,7 @@ En iOS existen varias maneras de notificar a otros componentes:
    poner tvName
 
 **Constantes**
-El número de constantes en el proyecto se tiene que mantener lo más corto posible, cuando son variables a utilizar solo dentro de una clase, deben vivir en dicha clase. Utilizar un archivo llamado Constants.swift y dentro del archivo declarar estructuras. Como se muestra a continuación:
+<br>El número de constantes en el proyecto se tiene que mantener lo más corto posible, cuando son variables a utilizar solo dentro de una clase, deben vivir en dicha clase. Utilizar un archivo llamado Constants.swift y dentro del archivo declarar estructuras. Como se muestra a continuación:
 
     struct Config {
 	    static let baseURL = NSURL(string: "http://google.com")!
@@ -173,14 +173,14 @@ El número de constantes en el proyecto se tiene que mantener lo más corto posi
 
 
 **Assets**
-Utilizar el archivo de assets para administrar los assets del proyecto, proporcionar la medida más grande de la imagen (@3x) y dejar que el sistema escale a la imagen requerida. En caso de que la imagen no se ajuste bien, proporcionar los tamaños requeridos.
+<br>Utilizar el archivo de assets para administrar los assets del proyecto, proporcionar la medida más grande de la imagen (@3x) y dejar que el sistema escale a la imagen requerida. En caso de que la imagen no se ajuste bien, proporcionar los tamaños requeridos.
 En medida de lo posible incorporar imágenes como vectores gráficos (PDF)
 
 **Let en lugar de Var**
-Utilizar siempre let si el valor no cambiará, cuando se sabe que el valor va a cambiar utilizar var. Es una práctica común el definir todo como let y cambiarlo a var cuando el compilador mande error.
+<br>Utilizar siempre let si el valor no cambiará, cuando se sabe que el valor va a cambiar utilizar var. Es una práctica común el definir todo como let y cambiarlo a var cuando el compilador mande error.
 
 **Sintaxis**
-Es preferible utilizar la sintaxis recortada en lugar de la genérica.
+<br>Es preferible utilizar la sintaxis recortada en lugar de la genérica.
 
 Buena idea:
 
@@ -195,7 +195,7 @@ Mala idea:
     var faxNumber: Optional<Int>
 
 **Paréntesis**
-En condicionales, evitar el uso de paréntesis puesto que ya no son necesarios.
+<br>En condicionales, evitar el uso de paréntesis puesto que ya no son necesarios.
 
 Buena idea:
 
