@@ -129,20 +129,20 @@ Mala idea:
  - No utilizar self al menos que sirva para diferenciar una propiedad de una variable. 
  - Marcar clase como final cuando no se planea heredar de ella.
 
-## UI ## 
+## UI
 <br>Para el manejo de interfaces en iOS, se utilizará una combinación de Storyboards y vistas completamente programáticas. La estructura inicial se realizará en storyboards y para vistas reusables o complejas se codificarán las vistas.
 Se utilizará Autolayout para el acomodo de los elementos.
 
 ## Manejo de dependencias ## 
 <br>Se utilizará cocoapods como manejador de dependencias
 
-## Librerías ## 
+## Librerías
 
  - Alamofire para realizar llamadas a los servicios web. 
  - DateTools para manipular fechas.
  - SwiftyJSON para parsear y manejar json en swift.
 
-## Patrones de comunicación ## 
+## Patrones de comunicación
 <br>En iOS existen varias maneras de notificar a otros componentes:
 
  - Delegados: Se utiliza para comunicar información hacia atrás,   
@@ -152,13 +152,13 @@ Se utilizará Autolayout para el acomodo de los elementos.
  - Notification Center: Permite comunicarte de uno a muchos, la ventaja de esta forma de comunicación es que es altamente   
    desacoplado.
 
-## Convención de nombres ## 
+## Convención de nombres
  - Capitalizar las constantes: CONSTANT 
  - Para los acrónimos seguir de manera estricta la notación de camello, es decir  UnitId en lugar de UnitID
  - Anteponer el tipo de objeto, por ejemplo para un TextView
    poner tvName
 
-## Constantes ## 
+## Constantes
 <br>El número de constantes en el proyecto se tiene que mantener lo más corto posible, cuando son variables a utilizar solo dentro de una clase, deben vivir en dicha clase. Utilizar un archivo llamado Constants.swift y dentro del archivo declarar estructuras. Como se muestra a continuación:
 
     struct Config {
@@ -172,14 +172,14 @@ Se utilizará Autolayout para el acomodo de los elementos.
 	}
 
 
-## Assets ## 
+## Assets
 <br>Utilizar el archivo de assets para administrar los assets del proyecto, proporcionar la medida más grande de la imagen (@3x) y dejar que el sistema escale a la imagen requerida. En caso de que la imagen no se ajuste bien, proporcionar los tamaños requeridos.
 En medida de lo posible incorporar imágenes como vectores gráficos (PDF)
 
-## Let en lugar de Var ## 
+## Let en lugar de Var
 <br>Utilizar siempre let si el valor no cambiará, cuando se sabe que el valor va a cambiar utilizar var. Es una práctica común el definir todo como let y cambiarlo a var cuando el compilador mande error.
 
-## Sintaxis ## 
+## Sintaxis
 <br>Es preferible utilizar la sintaxis recortada en lugar de la genérica.
 
 Buena idea:
@@ -194,7 +194,7 @@ Mala idea:
     var employees: Dictionary<Int: String>
     var faxNumber: Optional<Int>
 
-## Paréntesis ## 
+## Paréntesis
 <br>En condicionales, evitar el uso de paréntesis puesto que ya no son necesarios.
 
 Buena idea:
