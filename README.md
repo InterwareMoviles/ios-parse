@@ -27,12 +27,15 @@ Este servidor está montado con Node.js y Express, por lo tanto para correrlo lo
 El archivo principal de configuración se llama "index.js", los parámetros importantes a modificar son:
 
 Sustituir esta línea:
+
 ```javascript
-var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;```
+var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
+```
 
 Por:
 ```javascript
-var databaseUri = <RUTA-A-BASE-DE-DATOS>```
+var databaseUri = <RUTA-A-BASE-DE-DATOS>
+```
 
 *(Ejemplo: "mongodb://username:password@hostname.com:3130/database")*
 
