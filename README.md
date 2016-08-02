@@ -59,7 +59,8 @@ var api = new ParseServer({
 			production: true
 		}
 	}  
-});```
+});
+```
 
 donde:
 
@@ -79,7 +80,8 @@ Al crear un proyecto nuevo, es necesario cerrar XCode, ir a la terminal en el fo
 ```
 pod 'Alamofire'
 pod 'Parse'
-pod 'AFNetworking'```
+pod 'AFNetworking'
+```
 
 Al guardar nuestro archivo, podemos usar "pod install" o "pod update" en caso de querer usar las últimas versiones de los Pods.
 
@@ -111,7 +113,8 @@ Para usar Facebook SDK:
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
-	</array>```
+	</array>
+```
 
   Para permitir conexiones inseguras (no https, no recomendable, solo para desarrollo):
   ```xml
@@ -119,7 +122,8 @@ Para usar Facebook SDK:
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-	</dict>```
+	</dict>
+  ```
 
   Para usar Fabric/Crashlytics:
   ```xml
@@ -136,9 +140,11 @@ Para usar Facebook SDK:
 				<string>Crashlytics</string>
 			</dict>
 		</array>
-	</dict>```
+	</dict>
+  ```
 
   * Google Analytics es una librería de Objective-C que no puede ser usado directamente con Swift. Para esto se debe tener un archivo "Bridging-Header". La forma más fácil de crear esto es crear un Nuevo Archivo en XCode y seleccionar Objective-C, XCode abrirá una ventana indicando que se va a crear el archivo Bridging-Header, dentro de este archivo se debe indicar:
 
   ```Objective-C
-  #import <Google/Analytics.h>```
+  #import <Google/Analytics.h>
+  ```
