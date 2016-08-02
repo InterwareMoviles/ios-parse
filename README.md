@@ -148,3 +148,103 @@ Para usar Facebook SDK:
   ```Objective-C
   #import <Google/Analytics.h>
   ```
+
+  #Setup General en XCode
+
+  Para usar nuestros Frameworks, debemos de importar en nuestro AppDelegate.swift nuestras librerías:
+
+```swift
+import Parse
+import FBSDKCoreKit
+import Fabric
+import Crashlytics
+```
+
+En la función "didFinishLaunchingWithOptions" del AppDelegate se deben de realizar las siguientes líneas:
+
+Para registrar las push notifictions:
+```swift
+registerForPushNotifications(application)
+application.registerForRemoteNotifications()
+```
+
+Agregar esta función para manejar los errores de Push Notifications:
+
+```swift
+func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+        }
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Store the deviceToken in the current Installation and save it to Parse
+
+        if let installation = PFInstallation.currentInstallation() {
+            installation.setDeviceTokenFromData(deviceToken)
+            installation.saveInBackground()
+        }
+
+    }
+
+    func registerForPushNotifications(application: UIApplication) {
+    let notificationSettings = UIUserNotificationSettings(
+        forTypes: [.Badge, .Sound, .Alert], categories: nil)
+    application.registerUserNotificationSettings(notificationSettings)
+}
+
+```
+
+Agregar esta función para manejar Push Notifications con Parse Server:
+
+```swift
+func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    PFPush.handlePush(userInfo)
+}
+```
+
+Para usar el login con Facebook:
+
+```swift
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+
+    return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+
+}
+
+func applicationDidBecomeActive(application: UIApplication) {
+
+    FBSDKAppEvents.activateApp()
+
+}
+```
+
+Para usar Crashlytics:
+```
+Fabric.with([Crashlytics.self])
+```
+Para realizar la comunicación con Parse Server:
+
+```swift
+let configuration = ParseClientConfiguration {
+            $0.applicationId = PARSE_APP_ID
+            $0.clientKey = PARSE_CLIENT_KEY
+            $0.server = PARSE_SERVER
+        }
+
+        Parse.initializeWithConfiguration(configuration)
+```
+
+Configurar Google:
+```swift
+var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+
+        let gai = GAI.sharedInstance()
+                gai.trackUncaughtExceptions = true  // report uncaught exceptions
+                gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
+
+```
