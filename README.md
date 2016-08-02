@@ -77,11 +77,11 @@ Para la base de datos se puede optar por tener un servidor propio o hay alternat
 #Inicio del proyecto con Cocoapods
 Al crear un proyecto nuevo, es necesario cerrar XCode, ir a la terminal en el folder de la aplicación y realizar pod init (Si es necesario, realizar gem install cocoapods para instalar Cocoapods). "pod init" genera el archivo Podfile, en ese archivo se debe de indicar los pods que queramos usar, por ejemplo:
 
-```
+`
 pod 'Alamofire'
 pod 'Parse'
 pod 'AFNetworking'
-```
+`
 
 Al guardar nuestro archivo, podemos usar "pod install" o "pod update" en caso de querer usar las últimas versiones de los Pods.
 
