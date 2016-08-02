@@ -3,12 +3,19 @@
 #Frameworks Utilizados:
 
 Fabric / Crashlytics.
+
 FBSDKCoreKit.
+
 FBSDKLoginKit.
+
 Alamofire.
+
 CryptoSwift.
+
 Parse.
+
 Google Analytics.
+
 
 #Uso de Parse Server
 Ya que Parse dejará de dar soporte a su servidor en la nube, es necesario contar con nuestro propio Parse Server, para ello, se puede descargar un ejemplo totalmente configurable de:
@@ -29,22 +36,39 @@ Por:
 Para configurar el sevidor se deben de indicar los siguientes valores:
 
 `var api = new ParseServer({
+
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+
   appId: process.env.APP_ID || 'myAppId',
+
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
+
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+
   push: {
+
 		android: {
+
 			senderId: '', // The Sender ID of GCM
+
 			apiKey: '' // The Server API Key of GCM
+
 		},
+
 		ios: {
+
 			pdx: 'certs/mycert.p12', // the path and filename to the .p12 file you exported earlier.
+
 			bundleId: '', // The bundle identifier associated with your app
+
 			production: true
+
 		}
+
 	}
+  
 });`
 
 donde:
